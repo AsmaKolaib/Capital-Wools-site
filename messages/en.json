@@ -1,0 +1,117 @@
+{
+    "LocaleSwitcher": {
+        "locale": "{locale, select, ar {AR} en {EN} other {Unknown}}"
+    },
+    "Logo": {
+        "logo": "CAPITAL WOOLS"
+    },
+    "Header": {
+        "home": "Home",
+        "services": "Services",
+        "blog": "Blog",
+        "products": "Products",
+        "aboutUs": "About Us",
+        "FAQ": "FAQ",
+        "ContactUs": "Contact Us"
+    },
+    "HomePage": {
+        "helloWorld": "Hello World !"
+    },
+    "AboutPage": {
+        "title": "About us",
+        "description": "CAPITAL WOOLS Founded in Riyadh in 1976, it is a leading wholesale and retail company for men's fabrics, wool, and various types of formal uniform fabrics.",
+        "aboutText": "Established in 1976, CAPITAL WOOLS Company started as a specialized exhibition in the trade of luxurious English fabrics and wool on Thumairi Street in Riyadh, one of the city's most famous streets known for fabric trade. With its long and successful history, the company has evolved to include a wide range of activities in the field of uniforms for various public and private companies, as well as for schools and hospitals. CAPITAL WOOLS Company is known for its comprehensive sales coverage in Riyadh and across the Kingdom, providing various types of winter clothing fabrics, including Chinese, Japanese, Korean, and European fabrics, making it an ideal destination for customers seeking quality and variety. Thanks to its extensive experience and successful history, CAPITAL WOOLS Company is considered a reliable and professional choice for all uniform needs, which has made it widely renowned and reputable in the local market."
+    },
+    "ServicesPage": {
+        "title": "Our Services",
+        "subtitle": "  What We Offer",
+        "description": "Capital Wools Company offers a variety of winter clothing fabrics and uniform fabrics.",
+        "servicesText": "Capital Wools offers uniform fabrics and a variety of high-quality fabrics, serving companies, schools, and hospitals across Saudi Arabia.",
+        "s1": "Selling wool and luxurious fabrics",
+        "s2": "Providing uniform solutions for companies, schools, and hospitals",
+        "s3": "Comprehensive sales coverage in Riyadh and across the Saudi Arabia",
+        "s4": "Offering a variety of winter clothing fabrics from different international sources",
+        "service1Title": "Fabric Selection",
+        "service1Des": "Carefully choosing materials to ensure durability, comfort, and style for our products ",
+        "service2Title": "Timely Delivery",
+        "service2Des": "Efficient processes to deliver products promptly and meet customer deadlines.",
+        "service3Title": "Quality Assurance",
+        "service3Des": "Rigorous testing and inspection processes to maintain high standards and reliability."
+    },
+    "BlogPage": {
+        "title1":"Blog",
+        "subtitle": "Our Blog",
+        "title": "Our Recent News",
+        "description": "Capital Wools Company offers a variety of winter clothing fabrics and uniform fabrics.",
+        "buttonText": "See More",
+        "blogText":"Discover the latest trends in fabrics and wool  "
+    },
+    "ProductsPage": {
+        "subtitle": "Our Products",
+        "title": " Fabric Collection",
+        "description": "Capital Wools Company offers a variety of winter clothing fabrics and uniform fabrics.",
+        "ProductText":"Explore our diverse collection of modern, high-quality fabrics   "
+    },
+    "NotFoundPage": {
+        "title": " Oops! The page you are looking for could not be found.",
+        "buttonText": "Go Back To Home"
+    },
+    "FAQ": {
+        "title": "Frequently Asked Questions",
+        "description": "Capital Wools Company offers a variety of winter clothing fabrics and uniform fabrics.",
+        "subtitle": "FAQ",
+        "title1": "Any Questions?",
+        "title2": "Look Here",
+        "FAQtext": "Do you have any questions about CAPITAL WOOLS Company? Here are some questions that may be helpful.",
+        "q1": "What services does the company offer in the field of uniforms?",
+        "n1": "The company has evolved to include a wide range of activities in the field of uniforms for various public and private companies, as well as for schools and hospitals.",
+        "q2": "What types of fabrics does the company provide?",
+        "n2": "The company provides various types of winter clothing fabrics, including Chinese, Japanese, Korean, and European fabrics.",
+        "q3": "How did the company manage to build its reputation in the local market?",
+        "n3": "Thanks to its extensive experience and successful history, CAPITAL WOOLS Company is considered a reliable and professional choice for all uniform needs, which has made it widely renowned and reputable in the local market."
+    },
+    "ContactUs": {
+        "subtitle": "Contact Us",
+        "title1": "GET IN TOUCH",
+        "title2": "WITH US",
+        "ContactUstext": "Whether you have inquiries, suggestions, or need assistance, we're here to help. You can fill out the form below or contact us directly via email or phone. We look forward to hearing from you!",
+        "location": "Location",
+        "PhoneNumber": "Phone Number",
+        "EmailAddress": "Email Address",
+        "name": "Name",
+        "yourName": "Your name",
+        "email": "Email",
+        "message": "Message",
+        "yourEmail": "Your email address",
+        "yourMessage": "Share your thoughts...",
+        "exPhone": "E.g 966000000000 ",
+        "locationAddress": " Al Thumairi St, Ad Dirah, Riyadh 12634, Saudi Arabia",
+        "send": "send"
+    },
+    "footer": {
+        "title": "CAPITAL WOOLS",
+        "footerText": "CAPITAL WOOLS Founded in Riyadh in 1976, it is a leading wholesale and retail company for men's fabrics, wool, and various types of formal uniform fabrics.",
+        "Company": "Company",
+        "Support": "Support",
+        "copyRight": " Capital Wools . All Rights Reserved."
+    },
+    "AboutUs":{
+        "subtitle": "About Us",
+        "title": "Capital Wools",
+        "ProductText":"is a leading provider of high-quality fabrics, catering to a diverse range of industries and customers. With a commitment to excellence, innovation, and sustainability, we strive to meet the evolving needs of our clients while maintaining the highest standards of quality.        ",
+        "buttonText": "Learn More ",
+        "Quality":"Quality",
+        "Luxury":"Luxury",
+        "Diversity":"Diversity"
+    },
+    "Hero": {
+        "title": "Explore The World Of Beauty And Creativity In Fabrics        ",
+        "HeroText": "Experience a unique world of fabrics and wool in Saudi Arabia. We offer a wide range of high-quality fabrics and luxurious wool to meet your diverse needs. Additionally, we provide uniform fabrics  with the highest standards of quality and precision. Discover with us a world of elegance and professionalism in every detail.",
+        "buttonText": "Learn More "
+    },
+    "Banner": {
+        "title1": "There's a reason good fabrics have a cost ",
+        "title2": "They're done with good quality to last ",
+        "who": "Zac Posen"
+    }
+}

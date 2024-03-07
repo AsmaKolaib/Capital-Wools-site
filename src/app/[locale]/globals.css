@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+body {
+  @apply font-secondaryAR  font-thin  bg-white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-primaryAR;
+}
+.btn {
+  @apply flex justify-center items-center gap-2 capitalize text-white py-3 px-6  transition-all shadow-lg whitespace-nowrap;
+}
+
+.btn-primary {
+  @apply bg-primary hover:bg-secondary hover:text-primary text-base md:text-lg lg:text-xl  tracking-wide;
+}
+
+.disabledBtn {
+  @apply bg-slate-400 text-primary hover:text-primary  hover:cursor-not-allowed  hover:bg-slate-400;
+}
+.social-link {
+  @apply text-gray-500 w-4 md:w-4 lg:w-5 h-4 md:h-4 lg:h-5 hover:text-secondary hover:-translate-y-1 transition-all;
+}
+
+.modernWay {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* .image-gallery-thumbnail-image {
+@apply w-full h-full object-cover object-center
+} */
+
+.image-gallery-thumbnail img {
+  width: auto;
+  height: 75px;
+}
+
+.image-gallery-svg {
+  width: 97px;
+  height: 100px !important;
+}
+.image-gallery-slide .image-gallery-image {
+  height: 550px !important;
+  width: 100% !important;
+  object-fit: cover;
+  object-position: center;
+}
