@@ -69,7 +69,7 @@ export const getTheCategoryImage = async (id) => {
 
 export const getAllCategories = async (lang: string) => {
   try {
-    const reqUrl = `https://dashboard.capitalwools.com/wp-json/wc/v3/categories?lang=${lang}`;
+    const reqUrl = `https://dashboard.capitalwools.com/wp-json/wpwc/v3/categories?lang=${lang}`;
 
 
     const response = await axios.get(reqUrl);

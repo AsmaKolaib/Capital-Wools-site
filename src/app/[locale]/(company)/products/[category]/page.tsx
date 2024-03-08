@@ -12,14 +12,14 @@ const Products = async ({
 }) => {
   const {products} = await fetchData(category);
 
-  if (isEmpty(products) || !isArray(products)) {
-    return null;
-  }
-console.log("localekjhg",locale);
+  // if (isEmpty(products) || !isArray(products)) {
+  //   return null;
+  // }
+console.log("localekjhg",products);
 
   return (
-    <main className="container overflow-x-hidden pt-24 px-4  lg:px-20  lg:pt-28 antialiased">
-    <div className="flex flex-wrap -mx-3 overflow-hidden mt-32 ">
+    <main className="container overflow-x-hidden pt-8 px-4  lg:px-20  lg:pt-15 antialiased">
+    <div className="flex flex-wrap -mx-3 ">
       {products.length ? products.map(product => {
         return (
           <Product key={product?.id} product={product}  params={locale} />

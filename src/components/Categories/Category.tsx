@@ -15,7 +15,7 @@ const CategorySection: FC<CategoriesPropers> = ({ Categories, params: { locale }
   if (isEmpty(Categories) || !isArray(Categories)) {
     return null;
   }
- 
+
   const data = Categories.map((category) => ({
     id: category.id,
     name: category.name,
@@ -24,9 +24,7 @@ const CategorySection: FC<CategoriesPropers> = ({ Categories, params: { locale }
   }));
   const t = useTranslations('ProductsPage');
 
-
   return (
-
     <>
       <div className="">
         <div className="container">
@@ -46,7 +44,7 @@ const CategorySection: FC<CategoriesPropers> = ({ Categories, params: { locale }
                   alt={category.name}
                   className="w-auto h-30 lg:h-60 object-cover mb-2"
                 />
-                <Heading subTitle={category.name} />
+                <Heading subTitle={category.name} locale={locale} />
               </Link>
             ))}
           </div>

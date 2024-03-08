@@ -37,7 +37,7 @@ const Post = async ({
     const { title, content, featuredImage, date } = post;
     const formattedDate = formatDate(date);
     return (
-        <main className="container overflow-x-hidden pt-24 px-4  lg:px-20  lg:pt-28 antialiased">
+        <main className="container overflow-x-hidden pt-8 px-4  lg:px-20  lg:pt-15 antialiased">
 
             <section className="bg-white">
                 <div className="container">

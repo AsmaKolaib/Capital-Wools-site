@@ -33,8 +33,8 @@ const Page: FC<PageProps> = async ({ params: { locale = "en" } }) => {
   console.log(locale);
 
   return (
-    <main className="container overflow-x-hidden pt-24 px-4  lg:px-20  lg:pt-28 antialiased">
-       <Blog posts={posts} params={{ locale }} />
+    <main className="container overflow-x-hidden pt-8 px-4  lg:px-20  lg:pt-15 antialiased">
+       <Blog posts={posts} params={{ locale }} button={false} />
 
       <div className='my-28' id='contact-us'>
         <ContantUs params={{ locale }} />

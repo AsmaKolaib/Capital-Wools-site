@@ -20,7 +20,7 @@ const Hero = ({
                             {t("title")}
                         </h2>
                         <Paragraph locale={locale} styling={`${locale === "ar" ? "font-secondaryAR" : ' pr-28 font-secondaryEN'} `} text={t("HeroText")} />
-                        <Button onClickFun={() => { route.push('/services') }} >{t("buttonText")} </Button>
+                        <Button onClickFun={() => { route.push(`${locale}//services`) }} >{t("buttonText")} </Button>
                     </div>
                     <div className="hidden lg:flex md:w-full  mt-14 md:mt-0   ">
                         <Slide locale={locale} />

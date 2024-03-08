@@ -18,7 +18,7 @@ const Page = async ({
   const {product} = await fetchData(productSlug);
 
   return (
-    <main className="container overflow-x-hidden pt-20 px-4 lg:px-20 antialiased">
+    <main className="container overflow-x-hidden pt-8 px-4 lg:px-20 antialiased">
       <SingleProduct product={product} />
       <section className='my-28' id='contact-us'>
        <ContantUs  params={{locale}}/>

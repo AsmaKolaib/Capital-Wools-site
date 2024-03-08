@@ -9,6 +9,7 @@ import X from "../../../public/images/X.svg"
 import Link from 'next-intl/link';
 import { useTranslations } from 'next-intl'
 import {  usePathname } from 'next/navigation'
+import ScrollToTop from "../Button/ToUp";
 interface FooterLink {
   label: string;
   link: string;
@@ -33,10 +34,10 @@ const Footer = ({
       title: t("Company"),
       links: [
         { label: t("home"), link: '/' },
-        { label: t("services"), link: 'services' },
-        { label: t("products"), link: 'products' },
-        { label: t("blog"), link: 'blog' },
-        { label: t("aboutUs"), link: 'about-us' },
+        { label: t("services"), link: '/services' },
+        { label: t("products"), link: '/products' },
+        { label: t("blog"), link: '/blog' },
+        { label: t("aboutUs"), link: '/about-us' },
       ]
     },
     {
@@ -53,7 +54,7 @@ const Footer = ({
   return (
     <>
       <footer className={`${locale ==="ar" ? " font-secondaryAR" : "font-primaryEN"} pt-20 pb-10 bg-black `} >
-
+      <ScrollToTop/>
         {/* Links */}
         <div className="container mb-6 lg:mb-12 flex flex-col lg:flex-row">
           <div className="basis-1/3 flex flex-col lg:items-start gap-4 lg:gap-6">

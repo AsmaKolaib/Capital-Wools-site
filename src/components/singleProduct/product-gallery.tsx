@@ -20,7 +20,7 @@ const ProductGallery: FunctionComponent<ProductGalleryProps> = ({ items }) => {
     });
 
     return (
-        <ImageGallery items={images} />
+        <ImageGallery items={images}  />
     );
 };
 // 

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image, { StaticImageData } from 'next/image';
-import Img1 from '../../../public/images/image1.jpg';
-import Img2 from '../../../public/images/image2.jpg';
-import Img3 from '../../../public/images/image3.jpg';
-import Img4 from '../../../public/images/image4.jpg';
+import Img1 from '../../../public/images/img1 (1).jpg';
+import Img2 from '../../../public/images/img1 (2).jpg';
+import Img3 from '../../../public/images/img1 (3).jpg';
+
 
 const Slide = ({ locale }: { locale: string }) => {
-    const images: StaticImageData[] = [Img1, Img2, Img3, Img4];
+    const images: StaticImageData[] = [Img1, Img2, Img3];
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {

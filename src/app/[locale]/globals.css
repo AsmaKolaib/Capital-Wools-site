@@ -51,10 +51,10 @@ h6 {
 
 .image-gallery-svg {
   width: 97px;
-  height: 100px !important;
+  height: 60px !important;
 }
 .image-gallery-slide .image-gallery-image {
-  height: 550px !important;
+  height: 350px !important;
   width: 100% !important;
   object-fit: cover;
   object-position: center;

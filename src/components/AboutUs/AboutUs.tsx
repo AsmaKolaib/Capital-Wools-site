@@ -6,12 +6,12 @@ import Image from 'next/image';
 import Paragraph from '../Paragraph/Paragraph';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl'
-
+import Link from 'next-intl/link'
 interface ImageBoxPropers {
   title: string,
   image: string,
   alt: string,
-  locale?: string 
+  locale?: string
 }
 
 const AboutUs = ({
@@ -26,7 +26,7 @@ const AboutUs = ({
     <div className='w-full grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12  bg-white '>
       <div className=' flex flex-wrap max-h-[30rem]  ' >
         <div className='w-full h-2/4 '>       <ImageBox locale={locale} title={t("Quality")} image='/images/image1.jpg' alt='Quality ' /></div>
-        <div className={`${locale ==="ar" ? " pl-2" : 'pr-2'}  w-2/4 pt-4 `}>       <ImageBox locale={locale} title={t("Luxury")} image='/images/image4.jpg' alt='Luxury ' /></div>
+        <div className={`${locale === "ar" ? " pl-2" : 'pr-2'}  w-2/4 pt-4 `}>       <ImageBox locale={locale} title={t("Luxury")} image='/images/image4.jpg' alt='Luxury ' /></div>
         <div className='w-2/4 pt-4'>     <ImageBox locale={locale} title={t("Diversity")} image='/images/image2.jpg' alt='Diversity ' /></div>
       </div>
       <div className='flex items-center ' >
@@ -34,7 +34,8 @@ const AboutUs = ({
           <div className="bg-white p-10 shadow-2 shadow-lg  md:px-7 xl:px-10">
             <Heading locale={locale} title={<>{t("title")}</>} subTitle={t("subtitle")} />
             <Paragraph locale={locale} styling="mb-6 leading-relaxed" text={t("AboutUsText")} />
-            <Button onClickFun={() => { route.push('/about-us') }} >{t("buttonText")}</Button>
+            <Button onClickFun={() => { route.push(`${locale}/about-us`) }} >{t("buttonText")}</Button>
+
           </div>
         </div>
       </div>
@@ -43,7 +44,7 @@ const AboutUs = ({
 }
 
 export default AboutUs
-const ImageBox: FC<ImageBoxPropers> = ({ image, alt, title ,locale }) => {
+const ImageBox: FC<ImageBoxPropers> = ({ image, alt, title, locale }) => {
   return (
 
     <div className=" relative w-full h-full bg-black">
@@ -54,7 +55,7 @@ const ImageBox: FC<ImageBoxPropers> = ({ image, alt, title ,locale }) => {
         height={400}
         className="w-full h-full bg-cover bg-center"
       />
-      <span className={ `${locale ==="ar" ? " right-10" : 'left-10'}  absolute  bottom-10  text-primary bg-secondary px-3 py-1`}>{title}</span>
+      <span className={`${locale === "ar" ? " right-10" : 'left-10'}  absolute  bottom-10  text-primary bg-secondary px-3 py-1`}>{title}</span>
     </div>
 
   );

@@ -10,7 +10,7 @@ const About = ({
 }) => { 
     const t = useTranslations('AboutPage')
     return (
-        <main className="container overflow-x-hidden pt-24 px-4  lg:px-20  lg:pt-28 antialiased">
+        <main className="container overflow-x-hidden pt-8 px-4  lg:px-20  lg:pt-15 antialiased">
             <Head>
                 <title>{t('title')}</title>
                 <meta name="description" content={t('description')} />

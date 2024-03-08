@@ -37,7 +37,7 @@ const SingleProduct: FC<SingleProductProps> = ({ product }) => {
     // console.log(productInfo.images);
     
     return productInfo ? (
-        <div className="single-product container mx-auto my-32 px-4 xl:px-0 p-10">
+        <div className="single-product container mx-auto mb-32 px-4 xl:px-0 p-10">
             <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-12">
                 <div className="product-images">
                     {productInfo?.images?.length ? (

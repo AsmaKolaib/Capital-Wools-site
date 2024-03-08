@@ -30,7 +30,7 @@ const page : FC<productsProps> = async ({ params: { locale }})=> {
 };
 const {  CategoriesInfo } = await fetchData();
   return (
-    <main className="container overflow-x-hidden pt-24 px-4  lg:px-20  lg:pt-28 antialiased">
+    <main className="container overflow-x-hidden pt-8 px-4  lg:px-20  lg:pt-15 antialiased">
 
 <section className=''>
     <CategorySection Categories={CategoriesInfo} params={{locale}}/>
