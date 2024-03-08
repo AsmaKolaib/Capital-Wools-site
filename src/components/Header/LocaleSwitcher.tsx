@@ -1,4 +1,3 @@
-'use client'
 import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from 'next-intl/client';
@@ -12,7 +11,12 @@ export default function LocaleSwitcher() {
     const [activeLang, setActiveLang] = useState(locale);
 
     const changeLocale = (newLocale: string) => {
-        router.replace(pathname, { locale: newLocale });
+        // Check if current path is blog or blog/[slug]
+        if (pathname.startsWith('/blog') || pathname.startsWith('/products') ) {
+            router.replace('/', { locale: newLocale });
+        } else {
+            router.replace(pathname, { locale: newLocale });
+        }
         setActiveLang(newLocale);
     }
 

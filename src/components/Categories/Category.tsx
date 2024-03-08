@@ -3,8 +3,9 @@ import React, { FC } from 'react';
 import Heading from '../Heading/Heading';
 import Paragraph from '../Paragraph/Paragraph';
 import { isArray, isEmpty } from 'lodash';
-import Link from 'next/link';
+import Link from 'next-intl/link';
 import { useTranslations } from 'next-intl'
+import { getTheCategoryImage } from '@/src/helpers/helper';
 
 interface CategoriesPropers {
   Categories: any,
@@ -14,14 +15,15 @@ const CategorySection: FC<CategoriesPropers> = ({ Categories, params: { locale }
   if (isEmpty(Categories) || !isArray(Categories)) {
     return null;
   }
-
+ 
   const data = Categories.map((category) => ({
     id: category.id,
     name: category.name,
     slug: category.slug,
-    image: category.image ? category.image.src : 'https://placehold.co/600x400'
+    image: category.image ? category.image : 'https://placehold.co/600x400'
   }));
   const t = useTranslations('ProductsPage');
+
 
   return (
 
@@ -38,7 +40,7 @@ const CategorySection: FC<CategoriesPropers> = ({ Categories, params: { locale }
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {data.map((category) => (
-              <Link key={category.id} href={`products/${category.slug}`} className="flex flex-col items-center w-full h-full">
+              <Link key={category.id} href={`/products/${category.slug}`} className="flex flex-col items-center w-full h-full">
                 <img
                   src={category.image}
                   alt={category.name}

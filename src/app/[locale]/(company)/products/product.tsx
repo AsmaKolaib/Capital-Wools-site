@@ -1,7 +1,7 @@
 // app/[locale]/products/[category] product page
 
 import { FC } from 'react'
-import Link from 'next/link';
+import Link from 'next-intl/link';
 import Image from '@/components/Image';
 import { isEmpty } from 'lodash';
 

@@ -1,3 +1,4 @@
+import axios from "axios";
 
 const WooCommerceRestApi = require('@woocommerce/woocommerce-rest-api').default;
 
@@ -7,29 +8,61 @@ const api = new WooCommerceRestApi({
   consumerSecret: process.env.WC_CONSUMER_SECRET,
   version: 'wc/v3',
 });
+// // Get All Categories
+// export const getAllCategories = async () => {
+//   return await api.get(
+//     'products/categories',
+//     {
+//       per_page: 100,
+//     },
+//   );
+// };
 // Get All Categories
-export const getAllCategories = async () => {
-  return await api.get(
-    'products/categories',
-    {
-      per_page: 100,
-    },
-  );
-};
+// export const getAllCategories = async (lang) => {
+//   return await api.get(
+//     'products/categories',
+//     {
+//       params: {
+//         per_page: 100,
+//         lang: lang
+//       }
+//     },
+//   );
+// };
 
 
-export const getProductsByCategorySlug = async (categorySlug: any, perPage = 50) => {
-  // Get the category ID from the slug
-  const response = await api.get('products/categories', {
-    slug: categorySlug,
-  });
-  const categoryId = response.data[0].id; // Assuming the slug is unique, get the first category's ID
+// export const getProductsByCategorySlug = async (categorySlug: any, perPage = 50) => {
+//   // Get the category ID from the slug
+//   const response = await api.get('products/categories', {
+//     slug: categorySlug,
+//   });
+//   const categoryId = response.data[0].id; // Assuming the slug is unique, get the first category's ID
 
-  // Fetch products by category ID
-  return await api.get('products', {
-    category: categoryId ,
-    per_page: perPage || 50,
-  });
+//   // Fetch products by category ID
+//   return await api.get('products', {
+//     category: categoryId ,
+//     per_page: perPage || 50,
+//   });
+// };
+export const getProductsByCategorySlug = async (categorySlug: string, perPage = 50) => {
+  try {
+    // Get the category ID from the slug
+    // const categoriesResponse = await api.get('products/categories', {
+    //   slug: categorySlug,
+    // });
+    // const categoryId = categoriesResponse.data[0].id; // Assuming the slug is unique, get the first category's ID
+
+    // Fetch products by category ID
+    const productsResponse = await api.get('products', {
+      category: 19,
+      per_page: perPage || 50,
+    });
+
+    return productsResponse.data;
+  } catch (error) {
+    console.error('Error fetching products by category:', error);
+    throw error;
+  }
 };
 
 
@@ -53,4 +86,18 @@ export const getProductsData = async (perPage = 50) => {
       per_page: perPage || 50,
     },
   );
+};
+// Get All Categories
+export const getAllCategories = async (lang: string) => {
+  try {
+    const reqUrl = `https://dashboard.capitalwools.com/wp-json/wc/v3/categories?lang=${lang}`;
+
+
+    const response = await axios.get(reqUrl);
+    console.log("response",response);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching categories:', error);
+    throw error;
+  }
 };

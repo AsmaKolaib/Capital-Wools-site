@@ -46,7 +46,7 @@ const Slide = ({ locale }: { locale: string }) => {
                 <Image
                     src={images[(currentImageIndex + 1) % images.length]}
                     alt={`Img${(currentImageIndex + 1) % images.length + 1}`}
-                    className="absolute bottom-32 xl:-bottom-5 right-0 z-20 h-64 w-96"
+                    className="absolute -bottom-32 xl:-bottom-5 right-0 z-20 h-64 w-96"
                 />
                 <ArrowLeft onClick={prevImage} className={`${locale === "ar" ? "left-0" : ''} absolute bottom-20 xl:bottom-3 bg-bgColor z-20 p-1 w-8 h-8 cursor-pointer hover:text-secondary  `} />
                 <ArrowRight onClick={nextImage} className='absolute bottom-20 xl:bottom-3 left-14 bg-bgColor z-20 p-1 w-8 h-8 cursor-pointer  hover:text-secondary ' />

@@ -20,8 +20,8 @@ const Blog: FC<BlogProps> = ({ posts ,params: { locale} }) => {
   }
 
   return (
-    <div className="bg-white">
-      <div className="container">
+    <section className="bg-white">
+
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-20">
@@ -31,7 +31,7 @@ const Blog: FC<BlogProps> = ({ posts ,params: { locale} }) => {
           </div>
         </div>
 
-        <div className="-mx-4 flex flex-wrap">
+        <article className="-mx-4 flex flex-wrap">
           {posts.map((post: { slug: string; id: React.Key | null | undefined; date: string; title: string; content: string; featuredImage: string; }) => (
             <BlogCard
               slug={post.slug}
@@ -40,14 +40,14 @@ const Blog: FC<BlogProps> = ({ posts ,params: { locale} }) => {
               CardTitle={post.title}
               CardDescription={post.content}
               image={post.featuredImage}
+              locale={locale}
             />
           ))}
-        </div>
+        </article>
         <div className='flex justify-center'>
           <Button >{t("buttonText")} </Button>
         </div>
-      </div>
-    </div>
+    </section>
   );
 };
 

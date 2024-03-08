@@ -21,18 +21,71 @@ const api = new WooCommerceRestApi({
 
 
 // Get All Categories
-export const getAllCategories = async () => {
-  return await api.get(
-    'products/categories',
-    {
-      per_page: 100,
-    },
-  );
+// export const getTheCategoriesImages  = async () => {
+//   return await api.get(
+//     'products/categories',
+//     {
+//       per_page: 100,
+//     },
+//   );
+// };
+// export const getAllCategories = async (lang: any) => {
+//   return await api.get(
+//     'products/categories',
+//     {
+//       params: {
+//         per_page: 100,
+//         lang: lang
+//       }
+//     },
+//   );
+// };
+
+// export const getTheCategoryImage = async (id) => {
+//   const { data  : imageSrc} = await api.get(
+//     `products/categories/${id}`
+//   );
+//   if(imageSrc === null)
+//   return ""
+  
+//   return imageSrc.image.src || ""
+// };
+export const getTheCategoryImage = async (id) => {
+  try {
+    const { data: imageSrc } = await api.get(
+      `products/categories/${id}`
+    );
+    return imageSrc.image.src || "";
+  } catch (error) {
+    if (error.response && error.response.status === 404) {
+      return "";
+    } else {
+      console.error('Error fetching category image:', error);
+      return ""; // Return an empty string or handle the error as needed
+    }
+  }
 };
 
-export async function fetchPosts(limit = 3) {
+
+export const getAllCategories = async (lang: string) => {
   try {
-    const reqUrl = 'https://dashboard.capitalwools.com/wp-json/wp/v2/posts?_fields=id,slug,title,date,content,featured_media';
+    const reqUrl = `https://dashboard.capitalwools.com/wp-json/wc/v3/categories?lang=${lang}`;
+
+
+    const response = await axios.get(reqUrl);
+    console.log("response",response);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching categories:', error);
+    throw error;
+  }
+};
+
+
+
+export async function fetchPosts(limit = 3, lang="en") {
+  try {
+    const reqUrl = `https://dashboard.capitalwools.com/wp-json/wp/v2/posts?_fields=id,slug,title,date,content,featured_media&lang=${lang}`;
     const res = await axios.get(reqUrl);
     const fetchedPosts = res.data.slice(0, limit);
 

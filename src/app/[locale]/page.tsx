@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { fetchPosts, getAllCategories } from '@/src/helpers/helper';
+import { fetchPosts, getAllCategories, getTheCategoryImage } from '@/src/helpers/helper';
 import Blog from '@/src/components/Blog/Blog';
 import Banner from '@/src/components/Banner/Banner';
 import Service from '@/src/components/Services/Services';
@@ -11,25 +11,39 @@ import CategorySection from '@/src/components/Categories/Category';
 import Head from 'next/head';
 import Header from '@/src/components/Header/header';
 import Footer from "@/src/components/Footer/Footer";
+import "./loading"
 // import Header from '@/src/components/Header1';
 interface HomeProps {
     posts: any;
-    Categories: any
+    CategoriesInfo: any
     params: { locale: string }
    
 }
-const fetchData = async () => {
-    const posts = await fetchPosts(3);
-    const { data: Categories } = await getAllCategories();
-    return {
-        posts,
-        Categories: Categories ?? {},
-    }
-};
+
 const Home: FC<HomeProps> = async ({ params: { locale }}) => {
-    const { posts, Categories } = await fetchData();
-    console.log("locale",locale);
+    const fetchData = async () => {
+        const posts = await fetchPosts(3,locale);
+        // const  data  = await getTheCategoryImage(18);
+        const  Categories  = await getAllCategories(locale);    
+        const CategoriesInfo = await Promise.all(Categories.map(async (category) => {
+        const imageSrc = await getTheCategoryImage(category.term_id);
+        return {
+            id: category.term_id,
+            name: category.name,
+            slug: category.slug,
+            image: imageSrc 
+        };
+      }));
+        return {
+            posts,
+            CategoriesInfo: CategoriesInfo ?? {},
+        }
+    };
     
+
+    
+    const { posts, CategoriesInfo } = await fetchData();
+    console.log("image",CategoriesInfo);
     return (
         <>
         <Header locale={locale}/>
@@ -48,7 +62,7 @@ const Home: FC<HomeProps> = async ({ params: { locale }}) => {
                     <Service params={{locale}}/>
                 </section>
                 <section className='my-28'>
-                    <CategorySection Categories={Categories} params={{locale}}/>
+                    <CategorySection Categories={CategoriesInfo} params={{locale}}/>
                 </section>
                 <section className='my-32'>
                     <Banner />

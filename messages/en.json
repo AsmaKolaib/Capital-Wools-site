@@ -93,12 +93,19 @@
         "footerText": "CAPITAL WOOLS Founded in Riyadh in 1976, it is a leading wholesale and retail company for men's fabrics, wool, and various types of formal uniform fabrics.",
         "Company": "Company",
         "Support": "Support",
-        "copyRight": " Capital Wools . All Rights Reserved."
+        "copyRight": " Capital Wools . All Rights Reserved.",
+        "home": "Home",
+        "services": "Services",
+        "blog": "Blog",
+        "products": "Products",
+        "aboutUs": "About Us",
+        "FAQ": "FAQ",
+        "ContactUs": "Contact Us"
     },
     "AboutUs":{
         "subtitle": "About Us",
         "title": "Capital Wools",
-        "ProductText":"is a leading provider of high-quality fabrics, catering to a diverse range of industries and customers. With a commitment to excellence, innovation, and sustainability, we strive to meet the evolving needs of our clients while maintaining the highest standards of quality.        ",
+        "AboutUsText":"is a leading provider of high-quality fabrics, catering to a diverse range of industries and customers. With a commitment to excellence, innovation, and sustainability, we strive to meet the evolving needs of our clients while maintaining the highest standards of quality.        ",
         "buttonText": "Learn More ",
         "Quality":"Quality",
         "Luxury":"Luxury",
