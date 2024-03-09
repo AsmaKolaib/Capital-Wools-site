@@ -3,6 +3,13 @@ import { getAllCategories } from './helper';
 import React, { FC } from 'react'
 import ContantUs from '@/src/components/ContantUs/ContantUs';
 import { getTheCategoryImage } from '@/src/helpers/helper';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: {
+    default: 'Products | CAPITAL WOOLS',
+  },
+}
 interface productsProps {
   posts: any;
   Categories: any

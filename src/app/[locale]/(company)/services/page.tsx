@@ -1,8 +1,13 @@
 "use client"
+import { useEffect } from "react";
 import FAQ from "@/src/components/FAQ/FAQ";
 import ContantUs from "@/src/components/ContantUs/ContantUs";
-import Head from "next/head";
 import { useTranslations } from 'next-intl'
+import { Metadata } from "next";
+
+const metadata: Metadata = {
+  title: 'Services | CAPITAL WOOLS',
+};
 
 
 const ServicesPage = ({
@@ -17,14 +22,13 @@ const ServicesPage = ({
     { service: t("s3") },
     { service: t("s4") },
   ]
+  useEffect(() => {
+    document.title = metadata.title;
+}, []);
 
 
   return (
     <main className="container overflow-x-hidden pt-8 px-4  lg:px-20  lg:pt-15 antialiased">
-      <Head>
-        <title>{t("title")}</title>
-        <meta name="description" content={t("description")} />
-      </Head>
       <h1 className={`${locale === "ar" ? " font-primaryAR" : 'font-primaryEN'} text-3xl font-bold mb-4 `}>{t("title")}</h1>
       <p className={`${locale === "ar" ? " font-secondaryAR" : 'font-secondaryEN'} text-lg mb-8`}>
         {t("servicesText")}

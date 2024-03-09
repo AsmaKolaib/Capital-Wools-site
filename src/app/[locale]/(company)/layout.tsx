@@ -2,18 +2,18 @@
 import Footer from '@/src/components/Footer/Footer'
 import Header from "@/src/components/Header/header";
 
-const CompanyLayout = ({ children , params: { locale } }: { children: React.ReactNode ,params: { locale: string } }) => {
-    console.log("params",locale);
-    
+const CompanyLayout = ({ children, params: { locale } }: { children: React.ReactNode, params: { locale: string } }) => {
+    console.log("params", locale);
+
     return (
         <>
-             <Header locale={locale}/>
-        <main className='mt-24'>
+            <Header locale={locale} />
+            <main className='mt-24'>
 
-            {children}
+                {children}
 
-        </main>
-        <Footer locale={locale}/>
+            </main>
+            <Footer locale={locale} />
         </>
     )
 }

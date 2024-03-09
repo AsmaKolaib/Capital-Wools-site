@@ -8,11 +8,12 @@ import Hero from '@/src/components/Hero/Hero';
 import FAQ from '@/src/components/FAQ/FAQ';
 import ContantUs from "@/src/components/ContantUs/ContantUs";
 import CategorySection from '@/src/components/Categories/Category';
-import Head from 'next/head';
 import Header from '@/src/components/Header/header';
 import Footer from "@/src/components/Footer/Footer";
 import "./loading"
+import Head from 'next/head';
 // import Header from '@/src/components/Header1';
+
 interface HomeProps {
     posts: any;
     CategoriesInfo: any
@@ -48,10 +49,11 @@ const Home: FC<HomeProps> = async ({ params: { locale } }) => {
         <>
             <Header locale={locale} />
             <main className="container overflow-x-hidden pt-24 px-4  lg:px-20  lg:pt-28 antialiased">
-                <Head>
-                    <title>Home</title>
-                    <meta name="description" content="About our textile and wool trading company." />
-                </Head>
+            <Head>
+                <title>Home</title>
+                <meta name="description" content="About our textile and wool trading company." />
+                {/* Add other meta tags here */}
+            </Head>
                 <section className=''>
                     <Hero params={{ locale }} />
                 </section>

@@ -2,16 +2,20 @@
 
 import React, { FC } from 'react';
 import axios from 'axios';
-import { useRouter } from 'next/router';
 import Heading from '@/src/components/Heading/Heading';
-import Link from 'next-intl/link';
-import { GetStaticPaths } from 'next';
+import { GetStaticPaths, Metadata } from 'next';
 import { fetchPostData, sanitize } from '../helper';
 import ContantUs from '@/src/components/ContantUs/ContantUs';
-import { useIntl } from 'next-intl';
+import Head from 'next/head'
+
+export const metadata: Metadata = {
+    title:  'Blog | CAPITAL WOOLS',
+  }
+
 interface PostPropers {
     post: any
 }
+
 
 
 const formatDate = (dateString: string): string => {
@@ -27,18 +31,19 @@ const Post = async ({
 }) => {
     const fetchData = async (slug: string) => {
         const post = await fetchPostData(slug);
+
         return {
             post,
         }
     };
-    console.log(locale)
+
     const { post } = await fetchData(slug);
-    console.log("post", post);
     const { title, content, featuredImage, date } = post;
     const formattedDate = formatDate(date);
+    // metadata.title = `${title} | CAPITAL WOOLS`;
     return (
         <main className="container overflow-x-hidden pt-8 px-4  lg:px-20  lg:pt-15 antialiased">
-
+ 
             <section className="bg-white">
                 <div className="container">
                     <div className="mx-auto pb-5 max-w-[710px]">

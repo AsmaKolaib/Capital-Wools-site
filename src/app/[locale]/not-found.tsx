@@ -5,7 +5,12 @@ import Button from '@/src/components/Button/Button';
 import { useRouter, usePathname } from 'next/navigation'
 import { useTranslations } from 'next-intl';
 
+
+
 const NotFound = ({ }) => {
+
+ 
+
     const router = useRouter();
     const pathname = usePathname();
     const rootName = pathname.split('/')[1]; // Use router.query to access the dynamic parameter

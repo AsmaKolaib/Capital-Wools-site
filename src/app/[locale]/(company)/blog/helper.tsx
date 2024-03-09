@@ -108,3 +108,11 @@ export const fetchPostData =async(slug: string)=>{
 //       featuredImage: featuredMediaUrl || 'https://placehold.co/600x400',
 //   };
 // }
+
+
+export  const fetchData = async (locale :any) => {
+  const posts = await fetchPosts(50, locale);
+  return {
+    posts,
+  }
+};

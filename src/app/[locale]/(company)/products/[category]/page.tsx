@@ -1,17 +1,22 @@
 // prodrouts/[slug].tsx
 import { FC } from "react";
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps, Metadata } from 'next';
 import { isArray, isEmpty } from 'lodash';
 import Product from '../product';
 import { getAllCategories, getProductsByCategorySlug, getProductsData } from '../helper';
 import ContantUs from '@/src/components/ContantUs/ContantUs';
+import Head from "next/head";
+
+export const metadata: Metadata = {
+  title:  'Products | CAPITAL WOOLS',
+}
+
 const Products = async ({
   params: { category , locale  },
 }: {
   params: { category: string , locale: string  }
 }) => {
   const {products} = await fetchData(category);
-
   // if (isEmpty(products) || !isArray(products)) {
   //   return null;
   // }

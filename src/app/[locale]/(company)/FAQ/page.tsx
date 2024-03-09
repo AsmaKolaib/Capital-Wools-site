@@ -1,8 +1,13 @@
 "use client"
-import React from 'react';
+import React, { useEffect } from 'react';
 import ContantUs from "@/src/components/ContantUs/ContantUs";
 import Head from 'next/head';
 import { useTranslations } from 'next-intl'
+import { Metadata } from 'next';
+
+const metadata: Metadata = {
+    title: 'FAQ | CAPITAL WOOLS',
+};
 
 
 const Faq = ({
@@ -10,6 +15,10 @@ const Faq = ({
 }: {
     params: { locale: string }
 }) => {
+    useEffect(() => {
+        document.title = metadata.title;
+    }, []);
+
     const t = useTranslations('FAQ');
     const faq = [
         { question: t("q1"), answer: t("n1") },
@@ -18,10 +27,6 @@ const Faq = ({
     ]
     return (
         <main className="container overflow-x-hidden pt-8 px-4  lg:px-20  lg:pt-15 antialiased">
-            <Head>
-                <title>{t("subtitle")}</title>
-                <meta name="description" content={t("description")} />
-            </Head>
             <h1 className={`${locale === "ar" ? " font-primaryAR" : 'font-primaryEN'} text-2xl font-bold mb-4`}>{t("title")}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {faq.map((faq, index) => (
