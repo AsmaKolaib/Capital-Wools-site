@@ -4,14 +4,17 @@ import Heading from '../Heading/Heading';
 import Paragraph from '../Paragraph/Paragraph';
 import { isArray, isEmpty } from 'lodash';
 import Link from 'next-intl/link';
-import { useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl';
 import { getTheCategoryImage } from '@/src/helpers/helper';
 
 interface CategoriesPropers {
   Categories: any,
   params: { locale: string }
 }
+
 const CategorySection: FC<CategoriesPropers> = ({ Categories, params: { locale } }) => {
+  const t = useTranslations('ProductsPage');
+
   if (isEmpty(Categories) || !isArray(Categories)) {
     return null;
   }
@@ -22,7 +25,6 @@ const CategorySection: FC<CategoriesPropers> = ({ Categories, params: { locale }
     slug: category.slug,
     image: category.image ? category.image : 'https://placehold.co/600x400'
   }));
-  const t = useTranslations('ProductsPage');
 
   return (
     <>
