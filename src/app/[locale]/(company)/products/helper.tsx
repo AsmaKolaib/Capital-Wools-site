@@ -91,7 +91,7 @@ export const getProductsData = async (perPage = 50) => {
 // Get All Categories
 export const getAllCategories = async (lang: string) => {
   try {
-    const reqUrl = `https://dashboard.capitalwools.com/wp-json/wpwc/v3/categories?lang=${lang}`;
+    const reqUrl = `https://dashboard.capitalwools.com/wp-json/wc/v3/categories?lang=${lang}`;
 
 
     const response = await axios.get(reqUrl);
