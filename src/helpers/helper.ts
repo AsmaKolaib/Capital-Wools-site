@@ -69,7 +69,7 @@ export const getTheCategoryImage = async (id) => {
 
 export const getAllCategories = async (lang: string) => {
   try {
-    const reqUrl = `https://dashboard.capitalwools.com/wp-json/wpwc/v3/categories?lang=${lang}`;
+    const reqUrl = `https://dashboard.capitalwools.com/wp-json/wc/v3/categories?lang=${lang}`;
 
 
     const response = await axios.get(reqUrl);
@@ -85,7 +85,7 @@ export const getAllCategories = async (lang: string) => {
 
 export async function fetchPosts(limit = 3, lang="en") {
   try {
-    const reqUrl = `https://dashboard.capitalwools.com/wp-json/wp/v2/posts?_fields=id,slug,title,date,content,featured_media&lang=${lang}`;
+    const reqUrl = `https://dashboard.capitalwools.com/wp-json/wpwp/v2/posts?_fields=id,slug,title,date,content,featured_media&lang=${lang}`;
     const res = await axios.get(reqUrl);
     const fetchedPosts = res.data.slice(0, limit);
 
@@ -95,9 +95,9 @@ export async function fetchPosts(limit = 3, lang="en") {
       return {
         id: post.id,
         slug: post.slug,
-        title: post.title.rendered,
+        title: post.title,
         date: post.date,
-        content: post.content.rendered,
+        content: post.content,
         featuredImage: featuredMediaUrl || 'https://placehold.co/600x400', // Use a placeholder image URL if featured image is not available
       };
     }));

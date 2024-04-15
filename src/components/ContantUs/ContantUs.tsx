@@ -78,7 +78,7 @@ const ContentUs = ({
                 {t("PhoneNumber")}
                 </h4>
                 <p className="text-base text-body-color ">
-                  +966 11 411 2052
+                +966 92 001 7074
                 </p>
               </div>
             </div>

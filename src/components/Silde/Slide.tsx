@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image, { StaticImageData } from 'next/image';
-import Img1 from '../../../public/images/img1 (1).jpg';
-import Img2 from '../../../public/images/img1 (2).jpg';
-import Img3 from '../../../public/images/img1 (3).jpg';
+import Img1 from '../../../public/images/logo1 (1).gif';
+import Img2 from '../../../public/images/logo1 (2).gif';
+import Img3 from '../../../public/images/logo1 (3).gif';
 
 
 const Slide = ({ locale }: { locale: string }) => {

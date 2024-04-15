@@ -25,9 +25,9 @@ const AboutUs = ({
   return (
     <div className='w-full grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12  bg-white '>
       <div className=' flex flex-wrap max-h-[30rem]  ' >
-        <div className='w-full h-2/4 '>       <ImageBox locale={locale} title={t("Quality")} image='/images/image1.jpg' alt='Quality ' /></div>
-        <div className={`${locale === "ar" ? " pl-2" : 'pr-2'}  w-2/4 pt-4 `}>       <ImageBox locale={locale} title={t("Luxury")} image='/images/image4.jpg' alt='Luxury ' /></div>
-        <div className='w-2/4 pt-4'>     <ImageBox locale={locale} title={t("Diversity")} image='/images/image2.jpg' alt='Diversity ' /></div>
+        <div className='w-full h-2/4 '>       <ImageBox locale={locale} title={t("Quality")} image='/images/logo1 (4).gif' alt='Quality ' /></div>
+        <div className={`${locale === "ar" ? " pl-2" : 'pr-2'}  w-2/4 pt-4 `}>       <ImageBox locale={locale} title={t("Luxury")} image='/images/logo1 (5).gif' alt='Luxury ' /></div>
+        <div className='w-2/4 pt-4'>     <ImageBox locale={locale} title={t("Diversity")} image='/images/logo1 (6).gif' alt='Diversity ' /></div>
       </div>
       <div className='flex items-center ' >
         <div className="w-full">
@@ -53,7 +53,7 @@ const ImageBox: FC<ImageBoxPropers> = ({ image, alt, title, locale }) => {
         alt={alt}
         width={400}
         height={400}
-        className="w-full h-full bg-cover bg-center"
+        className="w-full h-full  object-cover object-center"
       />
       <span className={`${locale === "ar" ? " right-10" : 'left-10'}  absolute  bottom-10  text-primary bg-secondary px-3 py-1`}>{title}</span>
     </div>
